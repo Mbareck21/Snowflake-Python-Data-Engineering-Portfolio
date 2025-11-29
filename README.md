@@ -1,14 +1,20 @@
 # Snowflake & Python Data Engineering Portfolio ❄️ 🐍
 
-This repository documents my journey building end-to-end Data Engineering pipelines. It demonstrates the integration of **Python (Pandas)**, **Snowflake (Data Warehousing)**, and **Power BI (Analytics)** to solve real-world business problems.
+This repository documents my journey building end-to-end Data Engineering pipelines. It demonstrates the integration of **Python (Pandas)**, **Snowflake (Data Warehousing)**, and **Power BI (Analytics)** to explore real-world business data.
 
 ## 🏆 Featured Project: Retail Sales ETL Pipeline
 
 **Objective:** Engineer an automated pipeline to process government liquor sales data and visualize Year-Over-Year revenue growth.
 
+### 📊 The Data
+*   **Source:** [Montgomery County Warehouse and Retail Sales](https://catalog.data.gov/dataset/warehouse-and-retail-sales) (via Data.gov).
+*   **Description:** A transactional dataset tracking alcohol sales from the Montgomery County (Maryland) Department of Liquor Control to retail licensees.
+*   **Volume:** ~300,000+ rows of historical sales data.
+*   **Key Metrics:** `Retail Sales ($)`, `Warehouse Sales ($)`, `Item Type` (Wine, Beer, Liquor), and `Supplier`.
+
 ### 1. The Architecture
-*   **Extract:** Python script ingests raw CSV data (200k+ rows) from local storage.
-*   **Transform:** Pandas performs data cleaning, header standardization (Snake Case), and historical filtering.
+*   **Extract:** Python script ingests raw CSV data from local storage.
+*   **Transform:** Pandas performs data cleaning, header standardization (Snake Case), and historical filtering to optimize dataset size.
 *   **Load:** Utilizes `snowflake.connector` and the optimized `write_pandas` API to bulk load data into the Snowflake Cloud Data Warehouse.
 *   **Visualize:** Power BI connects directly to Snowflake to model a Star Schema and render interactive dashboards.
 
